@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DepartSure - Home</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" class="logo-img" />
+      <b>DepartSure</b>
+    </div>
+    <div class="profile-avatar" onclick="toggleProfile()">
+      <img src="images/profile.png" alt="Profile" />
+    </div>
+  </header>
+  <div class="homepage-bg">
+    <main class="homepage-main">
+      <div class="homepage-greeting">
+        <h1>Hello, Jane Doe!</h1>
+      </div>
+      
+        <div class="homepage-actions">
+          <div class="action-card">
+            <img src="images/Map.png" alt="Travel" class="info-icon" />
+            <span>Travel</span>
+          </div>
+          <div class="action-card">
+            <img src="images/Bookmark.png" alt="Saved Location" class="info-icon" />
+            <span>Saved Location</span>
+          </div>
+        </div>
+        
+        <!-- Add your content here - below Saved Routes and Recent Activity -->
+        <div class="content-below-actions">
+          <!-- Your new content goes here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Profile Overlay -->
+  <div class="profile-overlay" id="profileOverlay">
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="back-button" onclick="toggleProfile()">←</div>
+        <div class="profile-title">Profile</div>
+      </div>
+      
+      <div class="profile-info">
+        <img src="images/jane-doe.png" alt="Profile Picture" class="profile-pic" />
+        <div class="profile-name">Jane Doe</div>
+      </div>
+      
+      <ul class="profile-menu">
+        <li><span class="icon"><img src="images/email.png" alt=""></span><span class="menu-label">sethiswaifu@gmail.com</span><span class="chevron">›</span></li>
+        <li><span class="icon"><img src="images/person.png" alt=""></span><span class="menu-label">Jane Doe</span><span class="chevron">›</span></li>
+        <li><span class="icon"><img src="images/call.png" alt=""></span><span class="menu-label">+63 912 345 6789</span><span class="chevron">›</span></li>
+        <li><span class="icon"><img src="images/location.png" alt=""></span><span class="menu-label">Poblacion, Medellin, Cebu</span><span class="chevron">›</span></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Logout Confirmation Dialog -->
+
+  <script>
+    function toggleProfile() {
+      const overlay = document.getElementById('profileOverlay');
+      overlay.classList.toggle('active');
+    }
+
+    function showLogoutConfirmation() {
+      const dialog = document.getElementById('logoutDialog');
+      dialog.classList.add('active');
+    }
+
+    function hideLogoutConfirmation() {
+      const dialog = document.getElementById('logoutDialog');
+      dialog.classList.remove('active');
+    }
+
+    function confirmLogout() {
+      // Redirect to splash screen
+      window.location.href = 'splash.html';
+    }
+  </script>
+</body>
+</html>
